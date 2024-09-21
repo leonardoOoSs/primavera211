@@ -1,0 +1,115 @@
+/* Flores */
+.flower {
+    width: 100px;
+    height: 100px;
+    background-image: url('flor_amarilla.png');
+    background-size: cover;
+    display: inline-block;
+    opacity: 0;
+    animation: drawFlower 3s forwards;
+}
+
+@keyframes drawFlower {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* Estilo para las nubes */
+.cloud {
+    position: absolute;
+    left: -200px;
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/046/032/353/small/horizontal-dream-fluffy-clouds-landscaped-cut-transparent-backgrounds-3d-illustration-png.png'); /* Reemplaza con el nombre de tu imagen de nube */
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 150px;
+    opacity: 0.8;
+    animation: moveClouds linear infinite;
+}
+
+@keyframes moveClouds {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(120vw); /* Mover la nube a través de la pantalla */
+    }
+}
+
+/* Ajustar la duración individual de cada nube */
+.cloud:nth-child(1) {
+    animation-duration: 60s;
+}
+.cloud:nth-child(2) {
+    animation-duration: 80s;
+}
+.cloud:nth-child(3) {
+    animation-duration: 100s;
+}
+/* Crear estrellas con brillo variable y sombras suaves */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    opacity: 0.8;
+    animation: twinkle 5s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.3); }
+}
+
+@keyframes slowTwinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.9; }
+}
+
+@keyframes fastTwinkle {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+/* Estilo de las nubes con gradientes para más realismo */
+.cloud {
+    position: absolute;
+    background: radial-gradient(circle, rgba(255,255,255,0.9) 20%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0) 100%);
+    border-radius: 50%;
+    animation: moveClouds linear infinite;
+}
+
+.cloud-small {
+    width: 150px;
+    height: 80px;
+    top: 20%;
+    left: -20%;
+    animation-duration: 45s; /* Movimiento más lento */
+}
+
+.cloud-large {
+    width: 300px;
+    height: 160px;
+    top: 10%;
+    left: -40%;
+    animation-duration: 80s;
+}
+
+/* Simular movimiento no lineal con leves cambios */
+@keyframes moveClouds {
+    0% { transform: translateX(0) translateY(0) scale(1); }
+    50% { transform: translateX(50vw) translateY(-10px) scale(1.1); } /* Cambios sutiles de tamaño y dirección */
+    100% { transform: translateX(100vw) translateY(0) scale(1); }
+}
+@media only screen and (max-width: 600px) {
+  /* Estilos para pantallas de celulares */
+  body {
+    font-size: 16px;
+  }
+}
